@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Trad:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+   
+    --Warm-Ivory:#F8F3EA;/*Main page background*/
+    --Wine-Red:#722F37;/*Primary buttons, links, highlights*/
+    --Olive-Forest:#354B38;/*Small accents, badges, secondary details*/
+    --Soft-Gold:#D9B98C;/*Decorative lines and small details*/
+    --yallow:#fdfa45a8;
+    --Espresso:#29251F;/*Headings, body text, footer background*/
+    --h1:64px;
+    --headings:42px;
+    --names:20px;
+    --text:16px;
+    --buttons:15;
+    --font: "Playwrite IT Trad", cursive;
+}
+body{
+    background-color: var(--Warm-Ivory);
+    font-family: "Comic Relief", system-ui;
+}
+
+.header{
+    width: 100%;
+    height: 80px;
+    background-color: var(--Wine-Red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5rem;
+}
+.humburger{
+    display: none;
+}
+.logo{
+    font-weight: 600;
+    font-size: larger;
+    color: var(--Soft-Gold);
+    font-family: var(--font);
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.navbar ul li a{
+    color: aliceblue;
+    text-decoration: none;
+    margin: 0 12px;
+    padding: 10px;
+    transition: all 1s ease;
+}
+.navbar ul li a:hover{
+    border-bottom: var(--Soft-Gold) solid 2px;
+    color: var(--Soft-Gold);
+}
+
+/* START HERO */
+header{
+    height: 100vh;
+}
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5rem;
+    height: 100%;
+}
+.hero .hero-image img{
+    width: 400px;
+    border-radius: 1.5rem;
+}
+.hero .hero-content{
+    margin-right: 3rem;
+}
+.hero .hero-content h1{
+    color: var(--Wine-Red);
+    font-size: var(--h1);
+    font-family: var(--font);
+}
+.hero .hero-content p{
+    color: var(--Espresso);
+    font-size: var(--names);
+    margin-bottom: 1rem;
+}
+.hero .hero-content h3{
+    font-size: var(--names);
+    color: var(--Olive-Forest);
+}
+.btn{
+    border: none;
+    padding:10px 16px;
+    background-color: var(--Soft-Gold);
+    color: var(--Wine-Red);
+    border-radius: 8px;
+    margin-right:10px;
+    font-size: var(--buttons);
+    font-weight: 600;
+    font-family: "Comic Relief", system-ui;
+    transition: all 0.5s ease;
+}
+.btn:hover{
+    background-color: var(--Olive-Forest);
+    color: var(--Soft-Gold);
+}
+/* END HERO */
+
+/* START MAIN */
+section{
+    margin: 5rem 0;
+}
+.container{
+    margin: 0 5rem;
+}
+#menu p, #about p{
+    text-align: center;
+    color: var(--Espresso);
+    font-size: var(--names);
+}
+#menu h2,
+#about h2,
+#features h2{
+    text-align: center;
+    color: var(--Wine-Red);
+    font-size: var(--headings);
+}
+/* START CARD */
+#menu .cards{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 1rem;
+    margin:  2rem 0;
+}
+#menu .card{
+    width: 200px;
+    background-color: var(--Soft-Gold);
+    border-radius: 1rem ;
+    text-align: center;
+}
+
+#menu .card h3{
+    font-size: var(--text);
+    color: var(--Wine-Red);
+}
+#menu .card p{
+    font-size: 14px;
+}
+#menu .card-img{
+    width: 200px;
+    border-radius: 1rem 1rem 0 0 ;
+}
+
+#menu .rating-price{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin:0 10px 10px;
+
+}
+#menu .rating i{
+    font-size: 14px;
+    color: var(--yallow);
+}
+
+/* END CARD */
+/* START ABOUT */
+#about{
+    width: 100%;
+    /* background-color: #37722f; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#about img{
+    width: 45%;
+    border-radius: 1.5rem;
+}
+#about .about-content{
+    margin-right: 3rem;
+}
+/* END ABOUT */
+/* END MAIN */
+
+
+
+
+
+
+@media (max-width:900px) {
+    .header{
+        position: relative;
+        padding: 0 3rem;
+    }
+    .navbar{
+        position: absolute;
+        background-color:var(--Wine-Red);
+        top: 80px;
+        left: 0;
+        width: 100%;
+        padding: 0 3rem;
+        display: none;
+        transition: 1s ease;
+        opacity: 0.8;
+    }
+    .navbar.active{
+        display: block;
+        transition: 1s ease;
+    }
+    .navbar ul{
+        display: block;
+    }
+    .navbar ul li{
+        margin: 20px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--Soft-Gold);
+    }
+    .navbar ul li:last-child{
+        border-bottom: none;
+    }
+    .navbar ul li a{
+        margin: 0;
+    }
+    .humburger{
+        display: block;
+        color: #fff;
+        font-size: 25px;
+        cursor: pointer;
+        position: relative;
+        width: 45px;
+        height: 45px;
+    }
+    .humburger i{
+        position: absolute;
+        inset: 0;
+        width: max-content;
+        height: max-content;
+        margin: auto;
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+    .humburger i.active{
+        opacity: 1;
+        transform: rotate(180deg);
+    }
+    .hero{
+        flex-direction: column;
+    }
+    .cards{
+
+    grid-template-columns: 1fr 1fr ;
+}
+    
+}
