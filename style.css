@@ -1,261 +1,465 @@
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Trad:wght@100..400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
-*{
+
+/* =========================
+   1. FONTS & RESET
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Trad:wght@100..400&family=Comic+Relief:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-   
-    --Warm-Ivory:#F8F3EA;/*Main page background*/
-    --Wine-Red:#722F37;/*Primary buttons, links, highlights*/
-    --Olive-Forest:#354B38;/*Small accents, badges, secondary details*/
-    --Soft-Gold:#D9B98C;/*Decorative lines and small details*/
-    --yallow:#fdfa45a8;
-    --Espresso:#29251F;/*Headings, body text, footer background*/
-    --h1:64px;
-    --headings:42px;
-    --names:20px;
-    --text:16px;
-    --buttons:15;
-    --font: "Playwrite IT Trad", cursive;
-}
-body{
-    background-color: var(--Warm-Ivory);
-    font-family: "Comic Relief", system-ui;
+
+:root {
+    /* Colors */
+    --warm-ivory: #F8F3EA;
+    --wine-red: #722F37;
+    --olive-forest: #354B38;
+    --soft-gold: #D9B98C;
+    --yellow: #fdfa45a8;
+    --espresso: #29251F;
+    --white: #fff;
+
+    /* Typography */
+    --font-heading: "Playwrite IT Trad", cursive;
+    --font-body: "Comic Relief", system-ui, sans-serif;
+
+    --h1: clamp(2.2rem, 5vw, 4rem);
+    --heading: clamp(1.8rem, 3.5vw, 2.6rem);
+    --subheading: clamp(1.1rem, 2vw, 1.25rem);
+    --text: 1rem;
+
+    /* Layout */
+    --container-width: 1200px;
+    --page-padding: clamp(1rem, 5vw, 4rem);
+    --section-spacing: clamp(3rem, 7vw, 6rem);
+    --radius: 1rem;
 }
 
-.header{
-    width: 100%;
-    height: 80px;
-    background-color: var(--Wine-Red);
+/* =========================
+   2. GLOBAL STYLES
+========================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+body {
+    background-color: var(--warm-ivory);
+    color: var(--espresso);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-wrap: break-word;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+}
+
+h2 {
+    font-family: var(--font-heading);
+    font-size: var(--heading);
+    color: var(--wine-red);
+    text-align: center;
+}
+
+section {
+    margin-block: var(--section-spacing);
+    scroll-margin-top: 6rem;
+}
+
+.container {
+    width: min(
+        calc(100% - 2 * var(--page-padding)),
+        var(--container-width)
+    );
+    margin-inline: auto;
+}
+
+/* =========================
+   3. HEADER & NAVIGATION
+========================= */
+
+.header {
+    position: relative;
+    z-index: 10;
+    min-height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5rem;
-}
-.humburger{
-    display: none;
-}
-.logo{
-    font-weight: 600;
-    font-size: larger;
-    color: var(--Soft-Gold);
-    font-family: var(--font);
+    gap: 1.5rem;
+    padding-inline: var(--page-padding);
+    background-color: var(--wine-red);
 }
 
-.navbar ul{
+.logo {
+    color: var(--soft-gold);
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.navbar ul {
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: clamp(0.5rem, 1.5vw, 1.5rem);
     list-style: none;
 }
-.navbar ul li a{
-    color: aliceblue;
+
+.navbar a {
+    display: block;
+    padding: 0.5rem;
+    color: var(--white);
     text-decoration: none;
-    margin: 0 12px;
-    padding: 10px;
-    transition: all 1s ease;
-}
-.navbar ul li a:hover{
-    border-bottom: var(--Soft-Gold) solid 2px;
-    color: var(--Soft-Gold);
+    transition: color 0.25s ease;
 }
 
-/* START HERO */
-header{
-    height: 100vh;
+.navbar a:hover,
+.navbar a:focus-visible {
+    color: var(--soft-gold);
 }
-.hero{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 5rem;
-    height: 100%;
-}
-.hero .hero-image img{
-    width: 400px;
-    border-radius: 1.5rem;
-}
-.hero .hero-content{
-    margin-right: 3rem;
-}
-.hero .hero-content h1{
-    color: var(--Wine-Red);
-    font-size: var(--h1);
-    font-family: var(--font);
-}
-.hero .hero-content p{
-    color: var(--Espresso);
-    font-size: var(--names);
-    margin-bottom: 1rem;
-}
-.hero .hero-content h3{
-    font-size: var(--names);
-    color: var(--Olive-Forest);
-}
-.btn{
-    border: none;
-    padding:10px 16px;
-    background-color: var(--Soft-Gold);
-    color: var(--Wine-Red);
-    border-radius: 8px;
-    margin-right:10px;
-    font-size: var(--buttons);
-    font-weight: 600;
-    font-family: "Comic Relief", system-ui;
-    transition: all 0.5s ease;
-}
-.btn:hover{
-    background-color: var(--Olive-Forest);
-    color: var(--Soft-Gold);
-}
-/* END HERO */
 
-/* START MAIN */
-section{
-    margin: 5rem 0;
+.navbar a:focus-visible,
+.btn:focus-visible,
+.humburger:focus-visible {
+    outline: 2px solid var(--soft-gold);
+    outline-offset: 4px;
 }
-.container{
-    margin: 0 5rem;
+
+.humburger {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 1.5rem;
 }
-#menu p, #about p{
-    text-align: center;
-    color: var(--Espresso);
-    font-size: var(--names);
+
+.humburger i {
+    display: none;
 }
-#menu h2,
-#about h2,
-#features h2{
-    text-align: center;
-    color: var(--Wine-Red);
-    font-size: var(--headings);
+
+.humburger i.active {
+    display: block;
 }
-/* START CARD */
-#menu .cards{
-    width: 100%;
+
+/* =========================
+   4. HERO SECTION
+========================= */
+
+header > .hero {
+    width: min(
+        calc(100% - 2 * var(--page-padding)),
+        var(--container-width)
+    );
+    min-height: min(720px, calc(100svh - 80px));
+    margin-inline: auto;
+    padding-block: clamp(3rem, 7vw, 6rem);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    row-gap: 1rem;
-    margin:  2rem 0;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
 }
-#menu .card{
-    width: 200px;
-    background-color: var(--Soft-Gold);
-    border-radius: 1rem ;
+
+.hero-content h3 {
+    margin-bottom: 1rem;
+    color: var(--olive-forest);
+    font-size: var(--subheading);
+}
+
+.hero-content h1 {
+    margin-bottom: 1.5rem;
+    color: var(--wine-red);
+    font-family: var(--font-heading);
+    font-size: var(--h1);
+}
+
+.hero-content p {
+    max-width: 580px;
+    margin-bottom: 1.5rem;
+    font-size: var(--subheading);
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 480px;
+    margin-inline: auto;
+    border-radius: 1.5rem;
+    object-fit: cover;
+}
+
+.btn {
+    display: inline-block;
+    margin: 0.4rem 0.5rem 0.4rem 0;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid var(--soft-gold);
+    border-radius: 0.5rem;
+    background-color: var(--soft-gold);
+    color: var(--wine-red);
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.btn:hover {
+    background-color: var(--olive-forest);
+    border-color: var(--olive-forest);
+    color: var(--white);
+}
+
+/* =========================
+   5. MENU SECTION
+========================= */
+
+#menu > p {
+    margin-top: 0.75rem;
     text-align: center;
 }
 
-#menu .card h3{
-    font-size: var(--text);
-    color: var(--Wine-Red);
-}
-#menu .card p{
-    font-size: 14px;
-}
-#menu .card-img{
-    width: 200px;
-    border-radius: 1rem 1rem 0 0 ;
+#menu .cards {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 220px), 1fr)
+    );
+    gap: 1.5rem;
+    margin-top: 2.5rem;
 }
 
-#menu .rating-price{
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    margin:0 10px 10px;
-
-}
-#menu .rating i{
-    font-size: 14px;
-    color: var(--yallow);
+#menu .card {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background-color: var(--white);
+    box-shadow: 0 4px 16px rgb(41 37 31 / 8%);
+    transition: transform 0.25s ease;
 }
 
-/* END CARD */
-/* START ABOUT */
-#about{
+#menu .card:hover {
+    transform: translateY(-4px);
+}
+
+#menu .card-img {
     width: 100%;
-    /* background-color: #37722f; */
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+#menu .card-data {
+    padding: 1rem;
+}
+
+#menu .card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--wine-red);
+    font-size: 1.1rem;
+}
+
+#menu .card p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+#menu .rating-price {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
-#about img{
-    width: 45%;
+
+#menu .rating {
+    color: #B58A22;
+    font-size: 0.85rem;
+}
+
+#menu .price {
+    color: var(--olive-forest);
+    font-weight: 700;
+}
+
+/* =========================
+   6. ABOUT SECTION
+========================= */
+
+#about {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+}
+
+#about .about-content h2 {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+#about .about-content p {
+    font-size: var(--text);
+}
+
+#about img {
+    width: 100%;
+    max-height: 480px;
     border-radius: 1.5rem;
+    object-fit: cover;
 }
-#about .about-content{
-    margin-right: 3rem;
+
+/* =========================
+   7. FEATURES SECTION
+========================= */
+
+#features > p {
+    margin-top: 1rem;
+    text-align: center;
 }
-/* END ABOUT */
-/* END MAIN */
 
+/* =========================
+   8. RESPONSIVE NAVIGATION
+========================= */
 
-
-
-
-
-@media (max-width:900px) {
-    .header{
-        position: relative;
-        padding: 0 3rem;
+@media (max-width: 900px) {
+    .humburger {
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
     }
-    .navbar{
+
+    .navbar {
         position: absolute;
-        background-color:var(--Wine-Red);
-        top: 80px;
+        top: 100%;
         left: 0;
-        width: 100%;
-        padding: 0 3rem;
+        right: 0;
         display: none;
-        transition: 1s ease;
-        opacity: 0.8;
+        padding: 0.5rem var(--page-padding) 1rem;
+        background-color: var(--wine-red);
+        box-shadow: 0 8px 12px rgb(0 0 0 / 10%);
     }
-    .navbar.active{
-        display: block;
-        transition: 1s ease;
-    }
-    .navbar ul{
-        display: block;
-    }
-    .navbar ul li{
-        margin: 20px 0;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--Soft-Gold);
-    }
-    .navbar ul li:last-child{
-        border-bottom: none;
-    }
-    .navbar ul li a{
-        margin: 0;
-    }
-    .humburger{
-        display: block;
-        color: #fff;
-        font-size: 25px;
-        cursor: pointer;
-        position: relative;
-        width: 45px;
-        height: 45px;
-    }
-    .humburger i{
-        position: absolute;
-        inset: 0;
-        width: max-content;
-        height: max-content;
-        margin: auto;
-        opacity: 0;
-        transition: 0.3s ease;
-    }
-    .humburger i.active{
-        opacity: 1;
-        transform: rotate(180deg);
-    }
-    .hero{
-        flex-direction: column;
-    }
-    .cards{
 
-    grid-template-columns: 1fr 1fr ;
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .navbar a {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgb(217 185 140 / 35%);
+    }
+
+    .navbar li:last-child a {
+        border-bottom: 0;
+    }
+
+    header > .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content p {
+        margin-inline: auto;
+    }
+
+    .hero-image img {
+        max-width: 420px;
+    }
+
+    #about {
+        grid-template-columns: 1fr;
+    }
+
+    #about .about-content h2 {
+        text-align: center;
+    }
+
+    #about img {
+        max-width: 600px;
+        margin-inline: auto;
+    }
 }
-    
+
+/* =========================
+   9. SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+    .header {
+        min-height: 70px;
+    }
+
+    header > .hero {
+        padding-block: 3rem;
+    }
+
+    .hero-content h3 {
+        font-size: 0.95rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-content .btn {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #menu .cards {
+        grid-template-columns: 1fr;
+    }
+
+    #menu .card {
+        max-width: 360px;
+        width: 100%;
+        margin-inline: auto;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
 }
