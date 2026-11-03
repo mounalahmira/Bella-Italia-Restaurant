@@ -15,19 +15,24 @@
     <header>
         <div class="header">
             <div class="logo">Bella Italia</div>
-            <div class="humburger">
-                <i class="fa-solid fa-bars active"></i>
-                <i class="fa-solid fa-xmark"></i>
-            </div>
+            <button
+                type="button"
+                class="humburger"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                <i class="fa-solid fa-bars active" aria-hidden="true"></i>
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
             <nav class="navbar">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#about">Our Story</a></li>
                     <li><a href="#menu">Menu</a></li>
-                    <li><a href="#">Reviews</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>  
             </nav>
         </div>
         <div class="hero">
@@ -46,6 +51,14 @@
         </div>
     </header>
     <main class="container">
+        <section id="about">
+            <div class="about-content">
+                <h2>More Than a Meal, It's an Experience.</h2>
+                <p>At Bella Italia, we believe the best moments happen around the table. Inspired by Italian culinary traditions, we bring together fresh ingredients, comforting recipes, and the warmth of sharing a meal.</p>
+            </div>
+            <img src="images/person.png" alt="person">
+        </section>
+
         <section id="menu">
                 <h2>A Few of Our Favorites</h2>
                 <p>Made with care, served with love.</p>
@@ -245,16 +258,24 @@
                 </div>
             </div>
         </section>
-        <section id="about">
-            <div class="about-content">
-                <h2>More Than a Meal, It's an Experience.</h2>
-                <p>At Bella Italia, we believe the best moments happen around the table. Inspired by Italian culinary traditions, we bring together fresh ingredients, comforting recipes, and the warmth of sharing a meal.</p>
-            </div>
-            <img src="images/person.png" alt="person">
-        </section>
         <section id="features">
             <h2>The Bella Italia Difference</h2>
-            <p></p>
+            <div class="boxs">
+                <div class="box">
+                        <h3>Fresh Ingredients</h3>
+                        <p>Quality ingredients chosen with care.</p>   
+                </div>
+                
+                <div class="box">
+                        <h3>Made with Passion</h3>
+                        <p>Recipes inspired by Italian tradition.</p>   
+                </div>
+                
+                <div class="box">
+                        <h3>A Welcoming Atmosphere</h3>
+                        <p>A place to gather, relax, and enjoy.</p>   
+                </div>
+            </div>
         </section>
     </main>
 </body>

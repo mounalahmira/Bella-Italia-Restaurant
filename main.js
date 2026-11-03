@@ -9,14 +9,13 @@
 //     navbar.classList.toggle("active")
 // })
 
-
 const navbar = document.querySelector(".navbar");
 const hamburger = document.querySelector(".humburger");
 const bars = hamburger?.querySelector(".fa-bars");
 const xMark = hamburger?.querySelector(".fa-xmark");
 const navLinks = navbar?.querySelectorAll("a");
 
-if (navbar && hamburger && bars && xMark) {
+if (navbar && hamburger && bars && xMark) {  // && => and
     function toggleMenu(isOpen) {
         navbar.classList.toggle("active", isOpen);
         bars.classList.toggle("active", !isOpen);
