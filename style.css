@@ -365,13 +365,24 @@ header > .hero {
     transition: transform 0.25s ease;
     margin-inline: 2px;
 }
+#features .boxs .box i{
+    margin-bottom: 20px;
+    font-size: clamp(1rem, 7vw, 2.5rem);
+    color: var(--soft-gold);
+
+}
 #features .boxs .box h3{
     color: var(--olive-forest);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    
 }
 #features .box:hover {
     transform: translate(4px,-4px);
     /* transform: translateX(-4px); */
+}
+#features .box:hover i{
+    color: #B58A22;
+    transition: color 0.25s ease;
 }
 
 
