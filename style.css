@@ -367,7 +367,7 @@ header > .hero {
 }
 #features .boxs .box i{
     margin-bottom: 20px;
-    font-size: clamp(1rem, 7vw, 2.5rem);
+    font-size: clamp(1.2rem, 7vw, 2.5rem);
     color: var(--soft-gold);
 
 }
@@ -383,6 +383,85 @@ header > .hero {
 #features .box:hover i{
     color: #B58A22;
     transition: color 0.25s ease;
+}
+
+
+/* =========================
+   8. TASTEMONIALS NAVIGATION
+========================= */
+.slider{
+    /* background-color: #fff; */
+    /* width: clamp(80%,90vw,500px); */
+    width: min(80%,500px);
+    margin-inline: auto;
+    margin-top: 50px;
+    position: relative;
+}
+.slider .slides{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.slider .slides .slide img{
+    width: clamp(70px,7vw,100px);
+    height: clamp(70px,7vw,100px);
+    object-fit: cover;
+    border-radius: 50%;
+    border: var(--soft-gold) solid 4px;
+    margin-inline: auto;
+}
+
+.slider .slides .slide .content p{
+    margin: 15px 0;
+    line-height: 1.6;
+    padding-inline: clamp(10px,7vw,100px);
+}
+
+.slider .slides .slide .name{
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.next, .prev{
+    position: absolute;
+    top: 50%;
+    border: none;
+    background-color: var(--wine-red);
+    color: #fff;
+    border-radius: 50%;
+    width: clamp(20px,7vw,40px);
+    height: clamp(20px,7vw,40px);
+    cursor: pointer;
+}
+.next{
+    right: -30px;
+}
+.prev{
+    left: -30px;
+}
+.dots {
+    margin-top: 20px;
+    text-align: center;
+}
+.dots .dot{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--espresso);
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+.dots .dot.active{
+    background-color: var(--soft-gold);
+}
+
+.slider .slides .slide{
+    display: none;
+}
+.slider .slides .slide.active{
+    display: block;
 }
 
 
