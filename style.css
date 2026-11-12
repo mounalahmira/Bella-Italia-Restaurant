@@ -319,23 +319,27 @@ header > .hero {
    6. ABOUT SECTION
 ========================= */
 
-#about {
+#about,
+#reservation {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); /*didn't understand*/
     align-items: center;
     gap: clamp(2rem, 5vw, 4rem);
 }
 
-#about .about-content h2 {
+#about .about-content h2,
+#reservation .reservation-content h2 {
     margin-bottom: 1.5rem;
     text-align: left;
 }
 
-#about .about-content p {
+#about .about-content p,
+#reservation .reservation-content p {
     font-size: var(--text);
 }
 
-#about img {
+#about img,
+#reservation img {
     width: 100%;
     max-height: 480px;
     border-radius: 1.5rem;
@@ -464,6 +468,81 @@ header > .hero {
     display: block;
 }
 
+/* =========================
+   9. RESERVATION
+========================= */
+#reservation .reservation-content .btn{
+    margin-top: 20px;
+}
+
+.modal-backdrop {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4); /* optional dimming layer */
+    backdrop-filter: blur(8px);       /* adjusts the blur intensity */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    }
+.reservation-modal{
+    
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    background-color: var(--warm-ivory);
+    padding: 15px;
+    position: fixed;
+    border-radius: var(--radius);
+    z-index: 9999;
+    
+}
+
+.reservation-modal h3{
+    font-family: var(--font-heading);
+    text-align: center;
+    color: var(--wine-red);
+}
+.reservation-modal label{
+    margin-top: 10px;
+}
+.reservation-modal input{
+    display: block;
+    height: 30px;
+    border: var(--soft-gold) solid 1px;
+    border-radius: 5px;   
+}
+/* ="absolute right-4 top-3 text-2xl text-gray-500
+hover:text-gray-800" */
+.reservation-modal #close{
+    position: absolute;
+    right: 4px;
+    top: 0px;
+    font-size: 40px;
+    color: #bbbbbb;
+    border: none;
+    margin-right: 10px;
+    background-color: transparent;
+    width: 20px;
+    height: 20px; /* */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reservation-modal #close:hover{
+    color: #9c9c9c;
+}
+.reservation-modal button{
+    margin-top: 15px;
+
+}
+
 
 /* =========================
    8. RESPONSIVE NAVIGATION
@@ -519,18 +598,25 @@ header > .hero {
         max-width: 420px;
     }
 
-    #about {
+    #about,
+    #reservation {
         grid-template-columns: 1fr;
     }
 
     #about .about-content h2,
-    #about .about-content p {
+    #about .about-content p,
+    #reservation .reservation-content h2,
+    #reservation .reservation-content p {
         text-align: center;
     }
 
-    #about img {
+    #about img,
+    #reservation img {
         max-width: 600px;
         margin-inline: auto;
+    }
+    .reservation-modal{
+        width: 80%;
     }
 }
 
@@ -568,6 +654,9 @@ header > .hero {
         max-width: 360px;
         width: 100%;
         margin-inline: auto;
+    }
+    .reservation-modal{
+        width: 90%;
     }
 }
 

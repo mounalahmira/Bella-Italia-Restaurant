@@ -12,6 +12,31 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
+    <!-- Reservation Model -->
+     <div class="modal-backdrop" id="reservation-modal">
+        <div class="reservation-modal" >
+            <!-- Close button -->
+            <button
+                id="close"
+                type="button"
+                aria-label="Close login"
+            >
+                &times;
+            </button>
+            <h3>Reserve Your Tabel</h3>
+            <label for="">Name</label>
+            <input type="text" name="" id="">
+            <label for="">Date</label>
+            <input type="date" name="" id="">
+            <label for="">Time</label>
+            <input type="time" name="" id="">
+            <label for="">Number of guests</label>
+            <input type="number" name="" id="" min="1" max="10">
+            <button type="button" class="btn">Reserve</button>
+
+        </div>
+     </div>
+    <!-- Reservation Model -->
     <header>
         <div class="header">
             <div class="logo">Bella Italia</div>
@@ -328,6 +353,14 @@
                         <span class="dot"></span>
                     </div>
                 </div>
+        </section>
+        <section id="reservation">
+            <div class="reservation-content">
+                <h2>Your Table Is Waiting</h2>
+                <p>Gather your favorite people and let us take care of the rest.</p>
+                <button type="button" class="btn" id="reservation-btn">Reserve Your Table</button>
+            </div>
+            <img src="images/person.png" alt="person">
         </section>
     </main>
 </body>

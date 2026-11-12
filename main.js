@@ -104,3 +104,17 @@ dots.forEach((dot, index)=>{
 setInterval(function(){
     nextSlide()
 },3000)
+
+const reservationModal =  document.querySelector("#reservation-modal")
+const reservationBtn = document.querySelector("#reservation-btn")
+const closeReservationModal = document.querySelector("#close");
+
+
+// Close the reservationModel  when clicking X
+closeReservationModal.addEventListener("click", ()=>{
+    reservationModal.style.visibility = "hidden"
+});
+// Show the reservationModel 
+reservationBtn.addEventListener("click",()=>{
+    reservationModal.style.visibility = "visible"
+})
