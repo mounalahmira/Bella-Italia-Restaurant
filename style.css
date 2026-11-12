@@ -615,6 +615,10 @@ hover:text-gray-800" */
         max-width: 600px;
         margin-inline: auto;
     }
+    #reservation .reservation-content .btn{
+        display: block;
+        margin-inline: auto;
+    }
     .reservation-modal{
         width: 80%;
     }
