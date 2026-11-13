@@ -517,8 +517,7 @@ header > .hero {
     border: var(--soft-gold) solid 1px;
     border-radius: 5px;   
 }
-/* ="absolute right-4 top-3 text-2xl text-gray-500
-hover:text-gray-800" */
+
 .reservation-modal #close{
     position: absolute;
     right: 4px;
@@ -543,6 +542,99 @@ hover:text-gray-800" */
 
 }
 
+/* =========================
+   10. FOOTER
+========================= */
+
+footer {
+    background-color: var(--wine-red);
+    padding-block: 3rem;
+}
+
+#footer {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+    gap: 2rem;
+    color: var(--warm-ivory);
+}
+
+/* About column */
+.footer-about p {
+    max-width: 350px;
+    margin-top: 1.25rem;
+    padding-right: 1rem;
+}
+
+/* Social media */
+#footer .social-media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+#footer .social-media a {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--soft-gold);
+    border: 1px solid var(--soft-gold);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.25s ease;
+}
+
+#footer .social-media a:hover {
+    background-color: var(--soft-gold);
+    color: var(--wine-red);
+}
+
+/* Links columns */
+#footer h3 {
+    margin-bottom: 1rem;
+    color: var(--soft-gold);
+}
+
+#footer .quick-links,
+#footer .customer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#footer .quick-links a,
+#footer .customer-info a {
+    margin-bottom: 0.75rem;
+    color: var(--warm-ivory);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+#footer .quick-links a:hover,
+#footer .customer-info a:hover {
+    color: var(--soft-gold);
+}
+
+/* Contact information */
+#footer .contact-info div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#footer .contact-info i {
+    color: var(--soft-gold);
+}
+
+#footer .contact-info .time {
+    flex-basis: 100%;
+    margin-left: 1.6rem;
+    font-size: 0.875rem;
+}
 
 /* =========================
    8. RESPONSIVE NAVIGATION
@@ -622,6 +714,10 @@ hover:text-gray-800" */
     .reservation-modal{
         width: 80%;
     }
+    #footer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.5rem;
+    }
 }
 
 /* =========================
@@ -661,6 +757,22 @@ hover:text-gray-800" */
     }
     .reservation-modal{
         width: 90%;
+    }
+    #footer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-about p {
+        max-width: 100%;
+    }
+
+    #footer .contact-info div {
+        flex-wrap: nowrap;
+    }
+
+    #footer .contact-info .time {
+        flex-basis: auto;
     }
 }
 
