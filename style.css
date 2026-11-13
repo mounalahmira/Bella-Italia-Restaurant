@@ -215,14 +215,6 @@ header > .hero {
     font-size: var(--subheading);
 }
 
-.hero-image img {
-    width: 100%;
-    max-width: 480px;
-    margin-inline: auto;
-    border-radius: 1.5rem;
-    object-fit: cover;
-}
-
 .btn {
     display: inline-block;
     margin: 0.4rem 0.5rem 0.4rem 0;
@@ -241,6 +233,47 @@ header > .hero {
 .btn:hover {
     background-color: var(--olive-forest);
     color: var(--white);
+}
+
+/* Carousel */
+.carousel {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    gap: 1rem;
+}
+
+/* Each group */
+.carousel .group {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 1rem;
+    animation: spin 15s linear infinite;
+}
+
+/* Images */
+.carousel img {
+    width: clamp(180px, 25vw, 300px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+/* Animation */
+@keyframes spin {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - 1rem));
+    }
+}
+
+/* Pause animation when hovering */
+.carousel:hover .group {
+    animation-play-state: paused;
 }
 
 /* =========================
@@ -686,7 +719,7 @@ footer {
         margin-inline: auto;
     }
 
-    .hero-image img {
+    .hero img {
         max-width: 420px;
     }
 
@@ -747,14 +780,23 @@ footer {
     }
 
     #menu .cards {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     #menu .card {
-        max-width: 360px;
+        /* max-width: 360px; */
         width: 100%;
         margin-inline: auto;
     }
+    #menu .rating {
+        font-size: 0.5rem;
+    }
+    #menu .card p {
+        margin-bottom: 0.8rem;
+        font-size: 0.7rem;
+        line-height: 1;
+    }
+
     .reservation-modal{
         width: 90%;
     }
@@ -786,5 +828,8 @@ footer {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+    }
+    .carousel .group {
+        animation: none;
     }
 }
